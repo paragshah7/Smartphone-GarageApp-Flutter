@@ -29,7 +29,7 @@ class _MyPostsPageState extends State<MyPostsPage>{
   void initState() {
     super.initState();
     getCurrentUser();
-    DatabaseReference postsRef = FirebaseDatabase.instance.reference().child("SRPosts");
+    DatabaseReference postsRef = FirebaseDatabase.instance.reference().child("ParagPosts");
     postsRef.once().then((DataSnapshot snap)
     {
       var KEYS = snap.value.keys;
@@ -83,7 +83,7 @@ class _MyPostsPageState extends State<MyPostsPage>{
       ),
 
       body: StreamBuilder(
-          stream: FirebaseDatabase.instance.reference().child("SRPosts").onValue,
+          stream: FirebaseDatabase.instance.reference().child("ParagPosts").onValue,
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
               return Center(

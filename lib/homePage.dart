@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage>{
   void initState() {
     super.initState();
     getCurrentUser();
-    DatabaseReference postsRef = FirebaseDatabase.instance.reference().child("SRPosts");
+    DatabaseReference postsRef = FirebaseDatabase.instance.reference().child("ParagPosts");
     postsRef.once().then((DataSnapshot snap)
     {
       var KEYS = snap.value.keys;
@@ -103,7 +103,7 @@ class _HomePageState extends State<HomePage>{
       ),
 
       body: StreamBuilder(
-          stream: FirebaseDatabase.instance.reference().child("Posts").onValue,
+          stream: FirebaseDatabase.instance.reference().child("ParagPosts").onValue,
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
               return Center(
@@ -216,8 +216,8 @@ class _HomePageState extends State<HomePage>{
                       context,
                       MaterialPageRoute(builder: (context)
                       {
-                        return new MyProfilePage(email: loggedInUser.email);
-                        // return new PostPage();
+                        // return new MyProfilePage(email: loggedInUser.email);
+                        return new PostPage();
                       })
                   );
                 },
