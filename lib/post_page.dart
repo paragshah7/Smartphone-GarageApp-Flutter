@@ -53,9 +53,10 @@ class _PostPageState extends State<PostPage> {
   }
 
   Future getImageFromGallery() async {
-    var tempImage = await ImagePicker.pickImage(source: ImageSource.gallery);
+    var tempImage = await ImagePicker().getImage(source: ImageSource.gallery);
+    // var tempImage = await ImagePicker.pickImage(source: ImageSource.gallery);
     setState(() {
-      sampleImage = tempImage;
+      sampleImage = tempImage as File;
     });
   }
 
@@ -192,7 +193,7 @@ class _PostPageState extends State<PostPage> {
     return new Scaffold(
         appBar: new AppBar(
           title: new Text("Create a new Post"),
-          backgroundColor: Colors.pink,
+          backgroundColor: Colors.red[600],
           centerTitle: true,
           actions: <Widget>[
             IconButton(
@@ -247,10 +248,10 @@ class _PostPageState extends State<PostPage> {
                               fontSize: 15.0
                           ),),
                           textColor: Colors.white,
-                          color: Colors.deepOrange,
+                          color: Colors.yellow[800],
                           onPressed: (){
                             //add labels
-                            _getImageLabels();
+                            // _getImageLabels();
                           }
                       ),
                     ),
@@ -334,7 +335,7 @@ class _PostPageState extends State<PostPage> {
                         Text('Share my location'),
                         Switch(
                           value: shareLocation,
-                          activeColor: Colors.pink,
+                          activeColor: Colors.blue,
                           onChanged: (bool value) {
                             setState(() {
                               shareLocation = value;
@@ -347,7 +348,7 @@ class _PostPageState extends State<PostPage> {
                     elevation: 10.0,
                     child: Text("Post item"),
                     textColor: Colors.white,
-                    color: Colors.pink,
+                    color: Colors.yellow[800],
                     onPressed: uploadStatusImage
                 ),
               ],

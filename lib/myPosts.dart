@@ -79,7 +79,7 @@ class _MyPostsPageState extends State<MyPostsPage>{
         title: new Center(child: new Text(
           'My Posts',
         )),
-        backgroundColor: Colors.pink,
+        backgroundColor: Colors.red[600],
       ),
 
       body: StreamBuilder(
