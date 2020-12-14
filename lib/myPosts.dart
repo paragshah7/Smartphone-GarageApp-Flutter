@@ -36,7 +36,11 @@ class _MyPostsPageState extends State<MyPostsPage>{
       var DATA = snap.value;
       postsList.clear();
       for(var individualKey in KEYS){
+        print('My Posts - Before if');
+        print(email);
+        print(DATA[individualKey]['email']);
         if(DATA[individualKey]['email'] == email){
+          print('My Posts After');
           Posts posts = new Posts(
             DATA[individualKey]['itemName'],
             DATA[individualKey]['price'],
@@ -64,7 +68,7 @@ class _MyPostsPageState extends State<MyPostsPage>{
       final user = await _firebaseAuth.currentUser();
       if (user != null) {
         loggedInUser = user;
-        print('logged in user in myposts $email');
+        print('User in myPosts - $email');
       }
     } catch (e) {
       print('error in getCurrentUser on listpage');

@@ -10,7 +10,7 @@ class SalesApp extends StatelessWidget {
     return new MaterialApp(
       title: "Hyper Garage Sale",
       theme: new ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       //home: HomePage(),
       home: MappingPage(auth:Auth(),),

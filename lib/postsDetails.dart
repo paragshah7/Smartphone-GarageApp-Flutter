@@ -53,9 +53,9 @@ class _PostsDetailsState extends State<PostsDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: new Text("Item Detail"),
+        title: new Text("Item Details"),
         centerTitle: true,
-        backgroundColor: Colors.pink,
+        backgroundColor: Colors.red[600],
       ),
       body: _buildProductDetailsPage(context),
     );
@@ -269,7 +269,7 @@ class _PostsDetailsState extends State<PostsDetails> {
           GestureDetector(
             child: Icon(
               Icons.email,
-              color: Colors.deepOrangeAccent,
+              color: Colors.yellow[800],
             ),
             onTap:_sendEmailTo,
           )

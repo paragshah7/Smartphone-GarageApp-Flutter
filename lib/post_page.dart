@@ -53,10 +53,9 @@ class _PostPageState extends State<PostPage> {
   }
 
   Future getImageFromGallery() async {
-    var tempImage = await ImagePicker().getImage(source: ImageSource.gallery);
-    // var tempImage = await ImagePicker.pickImage(source: ImageSource.gallery);
+    var tempImage = await ImagePicker.pickImage(source: ImageSource.gallery);
     setState(() {
-      sampleImage = tempImage as File;
+      sampleImage = tempImage;
     });
   }
 
@@ -200,7 +199,8 @@ class _PostPageState extends State<PostPage> {
                 icon: Icon(Icons.add_photo_alternate),
                 onPressed: getImageFromGallery),
             IconButton(
-                icon: Icon(Icons.camera_alt), onPressed: getImageFromCamera),
+                icon: Icon(Icons.camera_alt), 
+                onPressed: getImageFromCamera),
           ],
         ),
       body: SingleChildScrollView(
@@ -229,32 +229,32 @@ class _PostPageState extends State<PostPage> {
                   ),
                 ),
                 SizedBox(
-                  height: 5.0,
+                  height: 10.0,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    ButtonTheme(
-                      minWidth: 30.0,
-                      height: 30.0,
-                      child: RaisedButton(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                          ),
-                          elevation: 8.0,
-                          child: Text("Labels:",style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15.0
-                          ),),
-                          textColor: Colors.white,
-                          color: Colors.yellow[800],
-                          onPressed: (){
-                            //add labels
-                            // _getImageLabels();
-                          }
-                      ),
-                    ),
+                    // ButtonTheme(
+                    //   minWidth: 30.0,
+                    //   height: 30.0,
+                    //   child: RaisedButton(
+                    //       shape: RoundedRectangleBorder(
+                    //         borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                    //       ),
+                    //       elevation: 8.0,
+                    //       child: Text("Labels:",style: TextStyle(
+                    //           color: Colors.white,
+                    //           fontSize: 15.0
+                    //       ),),
+                    //       textColor: Colors.white,
+                    //       color: Colors.yellow[800],
+                    //       onPressed: (){
+                    //         //add labels
+                    //         // _getImageLabels();
+                    //       }
+                    //   ),
+                    // ),
                     Expanded(
                       child: (imageLables.length==0 || imageLables==null)?
                       Container():
@@ -358,51 +358,5 @@ class _PostPageState extends State<PostPage> {
       ),
     );
   }
-
-
-
-
-  /*
-  Expanded(
-                      child: RaisedButton (
-                        shape: RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(18.0),
-                            side: BorderSide(color: Colors.red)
-                        ),
-                        child: imageLables.length==0? Text('No labels'):
-                        Row(
-                          children: <Widget>[
-                            Container(
-                              child: Text(imageLables[0]),
-                              color: Colors.orange,
-                              width: 70,
-                              height: 35,
-                              alignment: Alignment.center,
-                            ),
-                            SizedBox(
-                              width: 2.0,
-                            ),
-                            Container(
-                              child: Text(imageLables[1]),
-                              color: Colors.orange,
-                              width: 70,
-                              height: 35,
-                              alignment: Alignment.center,
-                            ),
-                            SizedBox(
-                              width: 2.0,
-                            ),
-                            Container(
-                              child: Text(imageLables[2]),
-                              color: Colors.orange,
-                              width: 70,
-                              height: 35,
-                              alignment: Alignment.center,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-   */
 
 }

@@ -140,7 +140,7 @@ class _LoginRegisterState extends State<LoginRegisterPage> {
         new RaisedButton(
           child: new Text("Login", style: new TextStyle(fontSize: 20.0)),
           textColor: Colors.white,
-          color: Colors.blue[700],
+          color: Colors.yellow[800],
           onPressed: validateAndSubmit,
         ),
         new FlatButton(
@@ -156,7 +156,7 @@ class _LoginRegisterState extends State<LoginRegisterPage> {
           child:
               new Text("Create Account", style: new TextStyle(fontSize: 20.0)),
           textColor: Colors.white,
-          color: Colors.blue[700],
+          color: Colors.yellow[800],
           onPressed: validateAndSubmit,
         ),
         new FlatButton(
